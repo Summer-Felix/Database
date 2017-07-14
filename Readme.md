@@ -2,6 +2,6 @@
 
 * ## [SQL Server](SQLServer/SQLServer-Readme.md) ##
 
-* ## MySQL ##
+* ## [MySQL](MySQL/MySQL-Readme.md) ##
 
 
