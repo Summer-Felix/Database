@@ -1,7 +1,7 @@
 # Database #
 
-* ## SQL Server ##
-  * [08.函数](SQLServer/08.函数.md)
+* ## [SQL Server](SQLServer/SQLServer-Readme.md) ##
+
   
 ## MySQL ##
 
