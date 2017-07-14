@@ -1,0 +1,583 @@
+内置函数
+
+聚合函数	对一组值进行运算，但返回一个汇总值。
+AVG	
+返回组中各值的平均值。 其中忽略 Null 值。
+CHECKSUM_AGG	
+返回组中各值的校验和。 将忽略 Null 值。 后面可以跟随 OVER 子句。
+COUNT	
+返回组中的项数(条数)。
+COUNT_BIG	
+返回组中的项数(条数) 。
+GROUPING	
+指示是否聚合 GROUP BY 列表中的指定列表达式。(汇总求值)
+GROUPING_ID	
+这是计算分组级别的函数。
+MAX	
+返回表达式中的最大值。
+MIN	
+返回表达式的最小值。 后面可以跟随 OVER 子句。
+STDEV	
+返回指定表达式中所有值的标准偏差。
+STDEVP	
+返回指定表达式中所有值的总体标准偏差。
+SUM	
+返回表达式中所有值的和或仅非重复值的和。 SUM 只能用于数字列。 其中忽略 Null 值。
+VAR	
+返回指定表达式中所有值的方差。 后面可以跟随 OVER 子句。
+VARP	
+返回指定表达式中所有值的总体统计方差。
+分析函数	
+解析函数基于一组行计算聚合值。
+CUME_DIST	
+计算某个值在 SQL Server 中的一组值内的累积分布。(按分组显示所占百分比)
+FIRST_VALUE	
+返回 SQL Server 2014 中有序值集中的第一个值。(按分组获得第一个值)
+LAG	
+访问相同结果集中先前行的数据，而用不使用 SQL Server 2014 中的自联接。(把一列的值往下,下降一行)
+LAST_VALUE	
+返回 SQL Server 2014 中有序值集中的最后一个值。(按分组获得最后一个值)
+LEAD	
+访问相同结果集的后续行中的数据，而不使用 SQL Server 2014 中的自联接。(把一列的值往上,提升一行)
+PERCENTILE_CONT	
+基于 SQL Server 列值的连续分布计算百分位数。 将内插结果，且结果可能不等于列中的任何特定值。
+PERCENTILE_DISC	
+计算 SQL Server 中整个行集内或行集的非重复分区内已排序值的特定百分位数。 
+PERCENT_RANK	
+计算 SQL Server 2014 中一组行内某行的相对排名。(按分组显示所占百分比)
+排序规则函数	
+返回有关排序规则的信息。
+COLLATIONPROPERTY	
+返回 SQL Server 2014 中指定排序规则的属性。
+TERTIARY_WEIGHTS	
+为使用 SQL 第三排序规则定义的非 Unicode 字符串表达式中的每个字符，返回一个表示权重的二进制字符串。
+配置函数	
+返回当前配置信息。
+@@DBTS	
+返回当前数据库的当前 timestamp 数据类型的值。此时间戳在数据库中保证是唯一的。
+@@LANGID	
+返回当前使用的语言的本地语言标识符 (ID)。
+@@LANGID	
+返回当前所用语言的名称。
+@@LOCK_TIMEOUT	
+返回当前会话的当前锁定超时设置（毫秒）。
+@@MAX_CONNECTIONS	
+返回 SQL Server 实例允许同时进行的最大用户连接数。 返回的数值不一定是当前配置的数值。
+@@MAX_PRECISION	
+按照服务器中的当前设置，返回 decimal 和 numeric 数据类型所用的精度级别。
+@@NESTLEVEL	
+返回在本地服务器上执行的当前存储过程的嵌套级别（初始值为 0）。
+@@OPTIONS	
+返回有关当前 SET 选项的信息。
+@@REMSERVER	
+返回远程 SQL Server 数据库服务器在登录记录中显示的名称。
+@@SERVERNAME	
+返回运行 SQL Server 的本地服务器的名称。 
+@@SERVICENAME	
+返回 SQL Server 正在其下运行的注册表项的名称(实例名称)。
+@@SPID	
+返回当前用户进程的会话 ID。
+@@TEXTSIZE	
+返回 TEXTSIZE 选项的当前值。
+@@VERSION	
+返回 SQL Server 的当前安装的系统和生成信息。
+转换函数	
+支持数据类型强制转换和转换。
+CAST 和 CONVERT	
+在 SQL Server 2014 中将表达式由一种数据类型转换为另一种数据类型。
+PARSE	
+返回 SQL Server 中转换为所请求的数据类型的表达式的结果。
+TRY_CAST	
+返回转换为指定数据类型的值（如果转换成功）；否则返回 Null。
+TRY_CONVERT	
+返回转换为指定数据类型的值（如果转换成功）；否则返回 Null。
+TRY_PARSE	
+在 SQL Server 中，返回表达式的结果（已转换为请求的数据类型）；如果强制转换失败，则返回 Null。
+加密函数	
+以下函数支持加密、解密、数字签名以及数字签名验证。
+ASYMKEY_ID	
+返回非对称密钥的 ID。
+ASYMKEYPROPERTY	
+返回非对称密钥的属性。
+CERTPROPERTY	
+返回指定证书属性的值。
+CERT_ID	
+返回证书的 ID。
+CRYPT_GEN_RANDOM	
+返回 Crypto API (CAPI) 生成的加密随机数。该输出是十六进制形式的指定字节数。
+DECRYPTBYASYMKEY	
+使用非对称密钥解密数据。
+DECRYPTBYCERT	
+用证书的私钥解密数据。
+DECRYPTBYKEY	
+使用对称密钥对数据进行解密。
+DECRYPTBYKEYAUTOASYMKEY	
+使用对称密钥执行解密，而该对称密钥则使用非对称密钥进行自动解密。
+DECRYPTBYKEYAUTOCERT	
+使用通过证书自动解密的对称密钥进行解密。
+DECRYPTBYPASSPHRASE	
+对使用通行短语加密的数据进行解密。
+ENCRYPTBYASYMKEY	
+使用非对称密钥加密数据。
+ENCRYPTBYCERT	
+使用证书的公钥加密数据。
+ENCRYPTBYKEY	
+使用对称密钥加密数据。
+ENCRYPTBYPASSPHRASE	
+通过使用 TRIPLE DES 算法以及 128 密钥位长度的通行短语对数据加密。
+HASHBYTES	
+返回其在 SQL Server 中的输入的 MD2、MD4、MD5、SHA、SHA1 或 SHA2 哈希值。
+IS_OBJECTSIGNED	
+指示对象由指定证书或非对称密钥签名。
+Key_GUID	
+返回数据库中对称密钥的 GUID。
+Key_ID	
+返回当前数据库中对称密钥的 ID。
+KEY_NAME	
+从对称密钥 GUID 或密码文本返回对称密钥的名称。
+SIGNBYASYMKEY	
+使用非对称密钥签署纯文本
+SIGNBYCERT	
+使用证书对文本进行签名并返回签名。
+SYMKEYPROPERTY	
+返回从 EKM 模块创建的对称密钥的算法。
+VERIFYSIGNEDBYCERT	
+测试经过数字签名的数据在签名后是否发生了更改。
+VERIFYSIGNEDBYASYMKEY	
+测试经过数字签名的数据在签名后是否发生了更改。
+游标函数	
+返回游标信息。
+@@CURSOR_ROWS	
+返回连接上打开的上一个游标中的当前限定行的数目。
+@@FETCH_STATUS	
+返回针对连接当前打开的任何游标发出的最后一条游标 FETCH 语句的状态。
+CURSOR_STATUS	
+一个标量函数，它允许存储过程的调用方确定该存储过程是否已为给定的参数返回了游标和结果集。
+数据类型函数	
+以下标量函数可返回有关不同数据类型值的信息。
+DATALENGTH	
+返回用于表示任何表达式的字节数。
+IDENT_CURRENT	
+返回为指定的表或视图生成的最后一个标识值。 所生成的最后一个标识值可以针对任何会话和任何作用域。
+IDENT_INCR	
+返回增量值，该值是在带有标识列的表或视图中创建标识列时指定的。
+IDENT_SEED	
+返回原始种子值，该值是在表或视图中创建标识列时指定的。
+IDENTITY	
+只用于在带有 INTO table 子句的 SELECT 语句中将标识列插入到新表中。
+SQL_VARIANT_PROPERTY	
+返回有关 sql_variant 值的基本数据类型和其他信息。
+日期和时间数据类型及函数	
+对日期和时间输入值执行运算，然后返回字符串、数字或日期和时间值。
+@@DATEFIRST	
+针对会话返回 SET DATEFIRST 的当前值。
+CURRENT_TIMESTAMP	
+返回当前数据库系统时间戳，返回值的类型为 datetime，并且不含数据库时区偏移量。
+DATEADD	
+将指定 number 时间间隔（有符号整数）与指定 date 的指定 datepart 相加后，返回该 date。时间增加或减少。
+DATEDIFF	
+返回指定的 startdate 和 enddate 之间所跨的指定 datepart 边界的计数（带符号的整数）。时间之间的计算。
+DATEFROMPARTS	
+返回表示指定年、月、日的 date 值。DATEFROMPARTS ( 2010, 12, 31 )   2010-12-31
+DATENAME	
+返回表示指定 date 的指定 datepart 的字符串。返回指定的日期部分。
+DATEPART	
+返回表示指定 date 的指定 datepart 的整数。返回指定的日期部分。
+DATETIME2FROMPARTS	
+对指定的日期和时间返回 datetime2 值（具有指定精度）。
+DATETIMEFROMPARTS	
+为指定的日期和时间返回 datetime 值。
+DATETIMEOFFSETFROMPARTS	
+对指定的日期和时间返回 datetimeoffset 值，具有指定的偏移量和精度。
+DAY	
+返回一个整数，该整数表示指定的 date 是该月份的哪一天。
+EOMONTH	
+返回包含指定日期的月份的最后一天（具有可选偏移量）。
+GETDATE	
+返回当前数据库系统时间戳，返回值的类型为 datetime，并且不含数据库时区偏移量。
+GETUTCDATE	
+以 datetime 值的形式返回当前数据库系统的时间戳。 数据库时区偏移量未包含在内。
+ISDATE	
+如果 expression 是有效的 date、time 或 datetime 值，则返回 1；否则，返回 0。
+MONTH	
+返回表示指定 date 的月份的整数。
+SMALLDATETIMEFROMPARTS	
+为指定的日期和时间返回 smalldatetime 值。
+SWITCHOFFSET	
+返回从存储的时区偏移量变为指定的新时区偏移量时得到的 datetimeoffset 值。
+SYSDATETIME	
+返回包含计算机的日期和时间的 datetime2(7) 值，SQL Server 的实例正在该计算机上运行。
+SYSDATETIMEOFFSET	
+返回包含计算机的日期和时间的 datetimeoffset(7) 值，SQL Server 的实例正在该计算机上运行。
+SYSUTCDATETIME	
+返回包含计算机的日期和时间的 datetime2 值，SQL Server 的实例正在该计算机上运行。
+TIMEFROMPARTS	
+对指定的时间返回 time 值（具有指定精度）。
+TODATETIMEOFFSET	
+返回从 datetime2 表达式转换而来的一个 datetimeoffset 值。
+YEAR	
+返回一个整数，它表示指定 date 的年份。
+逻辑函数	
+执行逻辑运算。
+CHOOSE	
+在 SQL Server 中从值列表返回指定索引处的项。
+IIF	
+在 SQL Server 中，根据布尔表达式计算为 true 还是 false，返回其中一个值。
+数学函数	
+基于作为函数的参数提供的输入值执行运算，然后返回数字值。
+ABS	
+返回指定数值表达式的绝对值（正值）的数学函数。
+ACOS	
+数学函数，返回其余弦是所指定的 float 表达式的角（弧度）；也称为反余弦。
+ASIN	
+返回以弧度表示的角，其正弦为指定 float 表达式。 也称为反正弦。
+ATAN	
+返回以弧度表示的角，其正切为指定的 float 表达式。 它也称为反正切函数。
+ATN2	
+返回以弧度表示的角，该角位于正 X 轴和原点至点 (y, x) 的射线之间，其中 x 和 y 是两个指定的浮点表达式的值。
+CEILING	
+返回大于或等于指定数值表达式的最小整数。
+COS	
+一个数学函数，返回指定表达式中以弧度表示的指定角的三角余弦。
+COT	
+一个数学函数，返回指定的 float 表达式中所指定角度（以弧度为单位）的三角余切值。
+DEGREES	
+返回以弧度指定的角的相应角度。
+EXP	
+返回指定的 float 表达式的指数值。
+FLOOR	
+返回小于或等于指定数值表达式的最大整数。
+LOG	
+返回 SQL Server 中指定 float 表达式的自然对数。
+LOG10	
+返回指定 float 表达式的常用对数（即：以 10 为底的对数）。
+PI	
+返回 PI 的常量值。
+POWER	
+返回指定表达式的指定幂的值。
+RADIANS	
+对于在数值表达式中输入的度数值返回弧度值。
+RAND	
+返回一个介于 0 到 1（不包括 0 和 1）之间的伪随机 float 值。
+ROUND	
+返回一个数值，舍入到指定的长度或精度。
+SIGN	
+返回指定表达式的正号 (+1)、零 (0) 或负号 (-1)。
+SIN	
+以近似数字 (float) 表达式返回指定角度（以弧度为单位）的三角正弦值。
+SQRT	
+返回指定浮点值的平方根。
+SQUARE	
+返回指定浮点值的平方。
+TAN	
+返回输入表达式的正切值。
+元数据函数	
+返回有关数据库和数据库对象的信息。
+@@PROCID	
+返回 Transact-SQL 当前模块的对象标识符 (ID)。 Transact-SQL 模块可以是存储过程、用户定义函数或触发器。
+APP_NAME	
+返回当前会话的应用程序名称（如果应用程序进行了设置）。
+APPLOCK_MODE	
+返回锁所有者对特定应用程序资源所持有的锁模式。 APPLOCK_MODE 是一个应用程序锁函数，它对当前数据库进行操作。
+APPLOCK_TEST	
+返回信息指示是否可以为指定锁所有者授予对某种资源的锁而不必获取锁。
+ASSEMBLYPROPERTY	
+返回有关程序集的属性的信息。
+COL_LENGTH	
+返回列的定义长度（以字节为单位）。
+COL_NAME	
+根据指定的对应表标识号和列标识号返回列的名称。
+COLUMNPROPERTY	
+返回有关列或参数的信息。
+DATABASE_PRINCIPAL_ID	
+返回当前数据库中的主体的 ID 号。
+DATABASEPROPERTYEX	
+返回 SQL Server 中指定数据库的指定数据库选项或属性的当前设置。
+DB_ID	
+返回数据库标识 (ID) 号。
+DB_NAME	
+返回数据库名称。
+FILE_ID	
+返回当前数据库中给定逻辑文件名的文件标识 (ID) 号。
+FILE_IDEX	
+返回当前数据库中的数据、日志或全文文件的指定逻辑文件名的文件标识 (ID) 号。
+FILE_NAME	
+返回给定文件标识 (ID) 号的逻辑文件名。
+FILEGROUP_ID	
+返回指定文件组名称的文件组标识 (ID) 号。
+FILEGROUP_NAME	
+返回指定文件组标识 (ID) 号的文件组名。
+FILEGROUPPROPERTY	
+提供文件组和属性名时，返回指定的文件组属性值。
+FILEPROPERTY	
+指定当前数据库中的文件名和属性名时，返回指定的文件名属性值。 对于不在当前数据库中的文件，返回 NULL。
+FULLTEXTCATALOGPROPERTY	
+返回有关 SQL Server 2014 中的全文目录属性的信息。
+FULLTEXTSERVICEPROPERTY	
+返回与全文引擎属性有关的信息。可以使用 sp_fulltext_service 设置和检索这些属性。
+INDEX_COL	
+返回索引列名称。 对于 XML 索引，返回 NULL。
+INDEXKEY_PROPERTY	
+返回有关索引键的信息。 对于 XML 索引，返回 NULL。
+INDEXPROPERTY	
+根据指定的表标识号、索引或统计信息名称以及属性名称，返回已命名的索引或统计信息属性值。 对于 XML 索引，返回 NULL。
+NEXT VALUE FOR	
+通过指定的序列对象生成序列号。
+OBJECT_DEFINITION	
+返回指定对象的定义的 Transact-SQL 源文本。
+OBJECT_ID	
+返回架构范围内对象的数据库对象标识号。
+OBJECT_NAME	
+返回架构范围内对象的数据库对象名称。
+OBJECT_SCHEMA_NAME	
+返回架构范围内的对象的数据库架构名称。
+OBJECTPROPERTY	
+返回当前数据库中架构范围内的对象的有关信息。
+OBJECTPROPERTYEX	
+返回当前数据库中架构范围内的对象的相关信息。
+ORIGINAL_DB_NAME	
+返回由用户在数据库连接字符串中指定的数据库名称。
+PARSENAME	
+返回对象名称的指定部分。 可检索的对象部分包括对象名称、所有者名称、数据库名称和服务器名称。
+SCHEMA_ID	
+返回与架构名称关联的架构 ID。
+SCHEMA_NAME	
+返回与架构 ID 关联的架构名称。
+SCOPE_IDENTITY	
+返回插入到同一作用域中的标识列内的最后一个标识值。
+SERVERPROPERTY	
+返回有关服务器实例的属性信息。
+STATS_DATE	
+返回表或索引视图上统计信息的最新更新的日期。
+TYPE_ID	
+返回指定数据类型名称的 ID。
+TYPE_NAME	
+返回指定类型 ID 的未限定的类型名称。
+TYPEPROPERTY	
+返回有关数据类型的信息。
+ODBC标量函数
+用在存储过程和用户定义函数中。这些函数包括字符串函数、数值函数、时间函数、日期函数、时间间隔函数和系统函数。
+排名函数	
+对分区中的每一行均返回一个排名值。
+DENSE_RANK	
+返回结果集分区中行的排名，在排名中没有任何间断。 行的排名等于所讨论行之前的所有排名数加一。
+NTILE	
+将有序分区中的行分发到指定数目的组中。
+RANK	
+返回结果集的分区内每行的排名。 行的排名是相关行之前的排名数加一。
+ROW_NUMBER	
+返回结果集分区内行的序列号，每个分区的第一行从 1 开始。
+复制函数	
+返回用于管理、监视以及维护复制拓扑的信息
+PUBLISHINGSERVERNAME	
+为参与数据库镜像会话的已发布数据库返回起始发布服务器的名称。
+行集函数
+返回可在 SQL 语句中像表引用一样使用的对象。
+OPENDATASOURCE	
+在四部分对象名称中提供连接信息，而不使用链接服务器名称。
+OPENQUERY	
+在指定的链接服务器上执行指定的传递查询。
+OPENROWSET	
+包含访问 OLE DB 数据源中的远程数据所需的所有连接信息。
+OPENXML	
+OPENXML 通过 XML 文档提供行集视图。
+安全函数	
+返回有关用户和角色的信息。
+CERTENCODED	
+返回二进制格式的证书的公共部分。 此函数具有证书 ID 并返回已编码的证书。
+CERTPRIVATEKEY	
+返回二进制格式的证书私钥。 此函数有三个参数。
+CURRENT_USER	
+返回当前用户的名称。 此函数等价于 USER_NAME()。
+HAS_DBACCESS	
+返回信息，说明用户是否可以访问指定的数据库。
+HAS_PERMS_BY_NAME	
+评估当前用户对安全对象的有效权限。 相关函数为 fn_my_permissions。
+IS_MEMBER	
+指示当前用户是否为指定 Microsoft Windows 组或 SQL Server 数据库角色的成员。
+IS_ROLEMEMBER	
+指示指定的数据库主体是否为指定数据库角色的成员。
+IS_SRVROLEMEMBER	
+指示 SQL Server 登录名是否为指定服务器角色的成员。
+LOGINPROPERTY	
+返回有关登录策略设置的信息。
+ORIGINAL_LOGIN	
+返回连接到 SQL Server 实例的登录名。
+PERMISSIONS	
+返回一个包含位图的值，该值指示当前用户的语句、对象或列权限。
+PWDENCRYPT	
+返回使用密码哈希算法的当前版本的输入值的 SQL Server 密码哈希。
+PWDCOMPARE	
+对密码执行哈希操作并将该哈希与现有密码的哈希进行比较。
+SESSION_USER	
+SESSION_USER 返回当前数据库中当前上下文的用户名。
+SESSIONPROPERTY	
+返回会话的 SET 选项设置。
+SUSER_ID	
+返回用户的登录标识号。
+SUSER_NAME	
+返回用户的登录标识名。
+SUSER_SID	
+返回指定登录名的安全标识号 (SID)。
+SUSER_SNAME	
+返回与安全标识号 (SID) 关联的登录名。
+SYSTEM_USER	
+当未指定默认值时，允许将系统为当前登录名提供的值插入表中。
+USER	
+当未指定默认值时，允许将系统为当前用户的数据库用户名提供的值插入表内。
+USER_ID	
+返回数据库用户的标识号。
+USER_NAME	
+根据指定的标识号返回数据库用户名。
+字符串函数	
+对字符串（char 或 varchar）输入值执行运算，然后返回一个字符串或数字值。
+ASCII	
+返回字符表达式中最左侧的字符的 ASCII 代码值。
+CHAR	
+将 int ASCII 代码转换为字符。
+CHARINDEX	
+在一个表达式中搜索另一个表达式并返回其起始位置（如果找到）。  没找到返回0
+CONCAT	
+返回作为串联两个或更多字符串值的结果的字符串。
+DIFFERENCE	
+返回一个整数值，指示两个字符表达式的 SOUNDEX 值之间的差异。
+FORMAT	
+返回以指定的格式和可选的区域性格式化的值。使用 FORMAT 函数将日期/时间和数字值格式化为识别区域设置的字符串。对于一般的数据类型转换，请使用 CAST 或 CONVERT。
+LEFT	
+返回字符串中从左边开始指定个数的字符。
+LEN	
+返回指定字符串表达式的字符数，其中不包含尾随空格。
+LOWER	
+将大写字符数据转换为小写字符数据后返回字符表达式。
+LTRIM	
+返回删除了前导空格之后的字符表达式。
+NCHAR	
+根据 Unicode 标准的定义，返回具有指定整数代码的 Unicode 字符。
+PATINDEX	
+返回模式在指定表达式中第一次出现的起始位置；如果在所有有效的文本和字符数据类型中都找不到该模式，则返回零。
+QUOTENAME	
+返回带有分隔符的 Unicode 字符串，分隔符的加入可使输入的字符串成为有效的 SQL Server 分隔标识符。
+REPLACE	
+用另一个字符串值替换出现的所有指定字符串值。
+REPLICATE	
+以指定的次数重复字符串值。
+REVERSE	
+返回字符串值的逆序。
+RIGHT	
+返回字符串中从右边开始指定个数的字符。
+RTRIM	
+截断所有尾随空格后返回一个字符串。清除字符右面的空格。
+SOUNDEX	
+返回一个由四个字符组成的代码 (SOUNDEX)，用于评估两个字符串的相似性。
+SPACE	
+返回由重复空格组成的字符串。
+STR	
+返回由数字数据转换来的字符数据。
+STUFF	
+STUFF 函数将字符串插入到另一个字符串中。 它从第一个字符串的开始位置删除指定长度的字符；然后将第二个字符串插入到第一个字符串的开始位置。
+SUBSTRING	
+返回 SQL Server 中的字符、二进制、文本或图像表达式的一部分。
+UNICODE	
+按照 Unicode 标准的定义，返回输入表达式的第一个字符的整数值。
+UPPER	
+返回小写字符数据转换为大写的字符表达式。
+系统函数	
+执行运算后返回 SQL Server 实例中有关值、对象和设置的信息。
+$PARTITION	
+为 SQL Server 2014中任何指定的分区函数返回分区号，一组分区列值将映射到该分区号中。
+@@ERROR	
+返回执行的上一个 Transact-SQL 语句的错误号。
+@@IDENTITY	
+返回最后插入的标识值的系统函数。
+@@PACK_RECEIVED	
+返回 SQL Server 自上次启动后从网络读取的输入数据包数。
+@@ROWCOUNT	
+返回受上一语句影响的行数。 如果行数大于 20 亿，请使用 ROWCOUNT_BIG。
+@@TRANCOUNT	
+返回在当前连接上执行的 BEGIN TRANSACTION 语句的数目。
+BINARY_CHECKSUM	
+返回按照表的某一行或表达式列表计算的二进制校验和值。 BINARY_CHECKSUM 可用于检测表中行的更改。
+CHECKSUM	
+返回按照表的某一行或一组表达式计算出来的校验和值。 CHECKSUM 用于生成哈希索引。
+CONNECTIONPROPERTY	
+返回处理请求时使用的唯一连接的连接属性的相关信息。
+CONTEXT_INFO	
+返回 context_info 值，该值通过使用 SET CONTEXT_INFO 语句为当前会话或批处理设置。
+CURRENT_REQUEST_ID	
+返回当前会话中当前请求的 ID。
+ERROR_LINE	
+返回发生错误的行号，该错误导致运行 TRY…CATCH 构造的 CATCH 块。
+ERROR_MESSAGE	
+返回导致 TRY…CATCH 构造的 CATCH 块运行的错误的消息文本。
+ERROR_NUMBER	
+返回错误的错误号，该错误会导致运行 TRY…CATCH 结构的 CATCH 块。
+ERROR_PROCEDURE	
+返回发生错误而导致运行 TRY…CATCH 构造的 CATCH 块的存储过程或触发器的名称。
+ERROR_SEVERITY	
+返回导致 TRY…CATCH 构造的 CATCH 块运行的错误的严重性。
+ERROR_STATE	
+返回导致 TRY…CATCH 构造的 CATCH 块运行的错误状态号。
+FORMATMESSAGE	
+根据 sys.messages 中的现有消息构造一条消息。
+GETANSINULL	
+返回此会话的数据库的默认为 Null 性。
+GET_FILESTREAM_TRANSACTION_CONTEXT	
+返回表示会话的当前事务上下文的标记。 应用程序使用此标记可将 FILESTREAM 文件系统流式处理操作绑定到该事务。
+HOST_ID	
+返回工作站标识号。 工作站标识号是连接到 SQL Server 的客户端计算机上的应用程序的进程 ID (PID)。
+HOST_NAME	
+返回工作站名。
+ISNULL	
+使用指定的替换值替换 NULL。
+COALESCE	
+按顺序计算变量并返回最初不等于 NULL 的第一个表达式的当前值。
+ISNUMERIC	
+确定表达式是否为有效的数值类型。
+MIN_ACTIVE_ROWVERSION	
+返回当前数据库中最低的活动 rowversion 值。
+NEWID	
+创建 uniqueidentifier 类型的唯一值。
+NEWSEQUENTIALID	
+在启动 Windows 后在指定计算机上创建大于先前通过该函数生成的任何 GUID 的 GUID。
+ROWCOUNT_BIG	
+返回已执行的上一语句影响的行数。
+XACT_STATE	
+用于报告当前正在运行的请求的用户事务状态的标量函数。
+系统统计函数	
+返回系统的统计信息。
+@@CONNECTIONS	
+返回 SQL Server 自上次启动以来尝试的连接数，无论连接是成功还是失败。
+@@CPU_BUSY	
+返回 SQL Server 自上次启动后的工作时间。
+@@IDLE	
+返回 SQL Server 自上次启动后的空闲时间。
+@@IO_BUSY	
+返回自从 SQL Server 最近一次启动以来，SQL Server 已经用于执行输入和输出操作的时间。
+@@PACK_SENT	
+返回 SQL Server 自上次启动后写入网络的输出数据包个数。
+@@PACKET_ERRORS	
+返回自上次启动 SQL Server 后在 SQL Server 连接上发生的网络数据包错误数。
+@@TIMETICKS	
+返回每个时钟周期的微秒数。
+@@TOTAL_ERRORS	
+返回自上次启动 SQL Server 之后 SQL Server 所遇到的磁盘写入错误数。
+@@TOTAL_READ	
+返回 SQL Server 自上次启动后由 SQL Server 执行的磁盘读取（非缓存读取）的次数。
+@@TOTAL_WRITE	
+返回自上次启动 SQL Server 以来 SQL Server 所执行的磁盘写入数。
+文本与图像函数	
+对文本或图像输入值或列执行运算，然后返回有关值的信息。
+TEXTPTR	
+返回对应于 varbinary 格式的 text、ntext 或 image 列的文本指针值。
+TEXTVALID	
+检查特定文本指针是否有效的 text、ntext 或 image 函数。
+触发器函数	
+可用于触发器的定义，以便测试数据值中的更改或者返回其他数据。
+COLUMNS_UPDATED	
+返回 varbinary 位模式，它指示表或视图中插入或更新了哪些列。
+EVENTDATA	
+返回有关服务器或数据库事件的信息。 激发事件通知时将调用 EVENTDATA，并且结果返回到指定的 Service Broker。
+TRIGGER_NESTLEVEL	
+返回为激发触发器的语句执行的触发器数。
+UPDATE()	
+返回一个布尔值，指示是否尝试对表或视图的指定列执行 INSERT 或 UPDATE 操作。
