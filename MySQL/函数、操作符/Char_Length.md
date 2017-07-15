@@ -1,4 +1,6 @@
-# [CHAR_LENGTH()](https://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_char-length) #
+# [函数、操作符](https://github.com/Summer-Felix/Database/blob/master/MySQL/函数、操作符.md) #
+
+## [CHAR_LENGTH()](https://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_char-length) ##
 
 
 
