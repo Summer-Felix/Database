@@ -1,6 +1,6 @@
-# [优化]() #
+# [优化](https://github.com/Summer-Felix/Database/blob/master/MySQL/优化.md) #
 
-## [Explain]() ##
+## [Explain](http://b72820a1.wiz03.com/share/s/2Ta22x20o4jW2IZNfI1XAGW30wawI70GGkoQ2k40bZ2_CNx5) ##
 
 **EXPLAIN(列)** | **含义**
 ------ | ------
